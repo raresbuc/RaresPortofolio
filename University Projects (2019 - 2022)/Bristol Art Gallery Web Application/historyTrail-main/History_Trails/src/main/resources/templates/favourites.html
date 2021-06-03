@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="_csrf" th:content="${_csrf.token}"/>
+    <title>Bristol Museum Guide</title>
+    <link th:href="@{/myStyle.css}" rel="stylesheet" />
+    <link th:href="@{/navbar.css}" rel="stylesheet" />
+    <link th:href="@{/styles.css}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../static/cookies.js" th:src="@{/cookies.js}" defer></script>
+    <script src="../static/sticky-header.js" th:src="@{/sticky-header.js}" defer></script>
+    <script src="../static/favourites.js" th:src="@{/favourites.js}" defer></script>
+
+
+</head>
+<body>
+
+<div id="navbar">
+    <a class="title" href = "/"><h1>Bristol Museum Guide</h1></a>
+    <div class="logos">
+        <img src="../static/images/M_Shed_logo.jpg" alt = "MShed logo" height="50" width="50" th:src="@{images/M_Shed_logo.jpg}"/>
+        <img src="../static/images/bristolMuseum_logo.png" alt = "Bristol Museums and Art Gallery logo" height="50" width="50" th:src="@{images/bristolMuseum_logo.png}"/>
+    </div>
+
+    <div class = "topnav">
+        <a href="/"><i class="fa fa-fw fa-home"></i> Home</a>
+        <a href="BristolArtGallery"><i class = "fas fa-landmark"></i> Bristol Art Gallery</a>
+        <a href="MShed"><i class = "fas fa-landmark"></i>  M Shed</a>
+        <a href="favourites" class = "current_tab"><i class = "fas fa-heart"></i> Favourites</a>
+        <a href="popular"><i class = "fas fa-star"></i> Popular</a>
+    </div>
+
+</div>
+
+
+<div class="content">
+
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">▲</button>
+    <div class="container">
+        <h1>Favourites</h1>
+        <div id="searchWrapper">
+            <label for="searchBar"></label>
+            <input  type="text" name="searchBar" id="searchBar" placeholder="Search for an object">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </div>
+        <ul id="charactersList"></ul>
+    </div>
+
+
+
+
+    <script>
+
+        favourites = []
+        $.each(document.cookie.split(/; */), function()  {
+            let splitCookie = this.split('=');
+            if (splitCookie[0] !== "purecookieDismiss") {
+                favourites.push(splitCookie[0]);
+            }
+        });
+
+
+
+        function makeClickable(url) {
+            return '<a href="'+url+'" target="_blank">Additional Info</a>';
+        }
+
+        function testLink(string) {
+            let url;
+
+            try {
+                url = new URL(string);
+            } catch (_) {
+                return false;
+            }
+            return url.protocol === "http:" || url.protocol === "https:";
+
+        }
+
+        const charactersList = document.getElementById('charactersList');
+        const searchBar = document.getElementById('searchBar');
+        let hpCharacters = [];
+
+        searchBar.addEventListener('keyup', (e) => {
+            const searchString = e.target.value.toLowerCase();
+
+            const filteredCharacters = hpCharacters.filter((obj) => {
+                const artistName = (obj.fields.artist) ? obj.fields.artist : "";
+
+                return (
+                    obj.fields.title_of_object.toLowerCase().includes(searchString) ||
+                    artistName.toLowerCase().includes(searchString)
+                );
+            });
+            displayCharacters(filteredCharacters);
+        });
+
+        const loadCharacters = async () => {
+            try {
+                const res = await fetch('https://opendata.bristol.gov.uk/api/records/1.0/search/?dataset=open-data-gallery-3-european-old-masters&q=&rows=115&sort=-order_of_appearance&facet=medium&facet=object_type');
+                hpCharacters = (await res.json()).records;
+                displayCharacters(hpCharacters);
+            } catch (err) {
+                console.error(err);
+            }
+        };
+
+
+
+        const displayCharacters = (out) => {
+            const htmlString = out
+                .map((obj) => {
+                    // if (obj.fields.gallery === "Gallery 3 - European Old Masters") {
+                    if (favourites.includes(obj.recordid)){
+                        let img;
+                        let favClass;
+                        if (!obj.fields.image_of_object) {
+                            img = obj.recordid;
+                        } else {
+                            img = obj.fields.image_of_object.id;
+                        }
+                        favClass = 'class="heart far fa-heart"';
+                        if (getCookie(obj.recordid)){
+                            favClass = 'class="heart fas fa-heart"';
+
+                        }
+
+                        const artistBirthDeath = (obj.fields.artist_s_birth_death) ? obj.fields.artist_s_birth_death : "";
+                        let linkToAdditionalInformation = (obj.fields.link_to_additional_information && testLink(obj.fields.link_to_additional_information)) ? makeClickable(obj.fields.link_to_additional_information) : "";
+                        return `
+                        <div class="object">
+                            <div class = "object-top">
+                                <span id = ${obj.recordid} onclick="fav(this.id)" ${favClass}> </span>
+                                <h2 class="title-of-object"> <strong>${obj.fields.title_of_object}</strong></h2>
+                                <h3 class="name-of-artist"> <strong>${obj.fields.artist}</strong></h3>
+                                <h4 class="artist-birth-death"> <strong>${artistBirthDeath}</strong></h4>
+                                <h4> <strong>${obj.fields.gallery}</strong></h4>
+                            </div>
+                            <img class="object-image" alt = "${obj.fields.title_of_object}" src="/images/${img}.jpg"/>
+                            <div class = "object-info">
+                                ${obj.fields.label}
+                                <p> ${linkToAdditionalInformation}</p>
+                            </div>
+                        </div>
+                    `
+                    }
+                })
+                .join('');
+            charactersList.innerHTML = htmlString;
+        };
+
+
+        window.onload = function() {
+            loadCharacters().then(() => {});
+        }
+
+
+    </script>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <p>By proceeding to favourite gallery object, you consent to our cookies</p>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <a href="more" target="_blank" title = "cookie policy" rel="noopener noreferrer"> <button1 class="btn1 default">Our Cookie Policy</button1> </a>
+    <h3>Connect with us</h3>
+
+    <div class="footer-row">
+        <div class = "footer-column">
+            <p>Bristol Museums<p>
+        </div>
+        <div class = "footer-column">
+            <p>MShed</p>
+        </div>
+        <div class = "footer-column">
+            <p>Bristol Museum & Art Gallery<p>
+
+        </div>
+    </div>
+
+    <div class="footer-row">
+
+        <div class = "footer-column">
+            <a href="https://www.instagram.com/bristolmuseums/?hl=en" target="_blank" title = "bristol museums instagram" rel="noopener noreferrer" class="fab fa-instagram"></a>
+            <a href="https://www.youtube.com/c/BristolmuseumsOrgUk" target="_blank" title = "bristol museums Youtube" rel="noopener noreferrer" class="fab fa-youtube"></a>
+        </div>
+        <div class = "footer-column">
+
+            <a href="https://www.facebook.com/mshedbristol/" target="_blank" title = "MShed facebook" rel="noopener noreferrer" class="fab fa-facebook-f"></a>
+            <a href="https://twitter.com/mshedbristol" target="_blank" title = "MShed twitter" rel="noopener noreferrer" class="fab fa-twitter"></a>
+        </div>
+        <div class = "footer-column">
+            <a href="https://www.facebook.com/BristolMuseumandArtGallery/" target="_blank" title = "bristol museum and art gallery facebook" rel="noopener noreferrer" class="fab fa-facebook-f"></a>
+            <a href="https://twitter.com/bristolmuseum" target="_blank" title = "bristol museum and art gallery twitter" rel="noopener noreferrer" class="fab fa-twitter "></a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

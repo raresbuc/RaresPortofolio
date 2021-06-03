@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="_csrf" th:content="${_csrf.token}"/>
+    <title>Bristol Museum Guide</title>
+    <link th:href="@{/myStyle.css}" rel="stylesheet" />
+    <link th:href="@{/styles.css}" rel="stylesheet" />
+    <link th:href="@{/navbar.css}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../static/gallery.js" th:src="@{/gallery.js}" async></script>
+    <script src="../static/cookies.js" th:src="@{/cookies.js}" defer></script>
+    <script src="../static/sticky-header.js" th:src="@{/sticky-header.js}" defer></script>
+    <script src="../static/favourites.js" th:src="@{/favourites.js}" defer></script>
+</head>
+<body>
+
+<div id="navbar">
+    <a class="title" href = "/"><h1>Bristol Museum Guide</h1></a>
+    <div class="logos">
+        <img src="../static/images/M_Shed_logo.jpg" alt = "MShed logo" height="50" width="50" th:src="@{images/M_Shed_logo.jpg}"/>
+        <img src="../static/images/bristolMuseum_logo.png" alt = "Bristol Museums and Art Gallery logo" height="50" width="50" th:src="@{images/bristolMuseum_logo.png}"/>
+    </div>
+
+    <div class = "topnav">
+        <a href="/"><i class="fa fa-fw fa-home"></i> Home</a>
+        <a href="BristolArtGallery" class = "current_tab"><i class = "fas fa-landmark"></i> Bristol Art Gallery</a>
+        <a href="MShed"><i class = "fas fa-landmark"></i>  M Shed</a>
+        <a href="favourites"><i class = "fas fa-heart"></i> Favourites</a>
+        <a href="popular"><i class = "fas fa-star"></i> Popular</a>
+
+    </div>
+
+
+</div>
+
+
+<div class="content">
+    <button onclick="topFunction()" id="myBtn" title="Go to top">▲</button>
+    <div class="container">
+        <h1>Space is a Place</h1>
+        <div id="searchWrapper">
+            <label for="searchBar"></label>
+            <input  type="text" name="searchBar" id="searchBar" placeholder="Search for an object">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </div>
+        <ul id="charactersList"></ul>
+
+    </div>
+
+    <script>
+        gallery = "Gallery 5 - Modern Art";
+    </script>
+
+    <div id="myModal" class="modal">
+    <div class="modal-content">
+        <p>By proceeding to favourite gallery object, you consent to our cookies</p>
+    </div>
+
+</div>
+
+</div>
+
+<div class="footer">
+    <a href="more" target="_blank" title = "cookie policy" rel="noopener noreferrer"> <button1 class="btn1 default">Our Cookie Policy</button1> </a>
+    <h3>Connect with us</h3>
+
+    <div class="footer-row">
+        <div class = "footer-column">
+            <p>Bristol Museums<p>
+        </div>
+        <div class = "footer-column">
+            <p>MShed</p>
+        </div>
+        <div class = "footer-column">
+            <p>Bristol Museum & Art Gallery<p>
+
+        </div>
+    </div>
+
+    <div class="footer-row">
+
+        <div class = "footer-column">
+            <a href="https://www.instagram.com/bristolmuseums/?hl=en" target="_blank" title = "bristol museums instagram" rel="noopener noreferrer" class="fab fa-instagram"></a>
+            <a href="https://www.youtube.com/c/BristolmuseumsOrgUk" target="_blank" title = "bristol museums Youtube" rel="noopener noreferrer" class="fab fa-youtube"></a>
+        </div>
+        <div class = "footer-column">
+
+            <a href="https://www.facebook.com/mshedbristol/" target="_blank" title = "MShed facebook" rel="noopener noreferrer" class="fab fa-facebook-f"></a>
+            <a href="https://twitter.com/mshedbristol" target="_blank" title = "MShed twitter" rel="noopener noreferrer" class="fab fa-twitter"></a>
+        </div>
+        <div class = "footer-column">
+            <a href="https://www.facebook.com/BristolMuseumandArtGallery/ "target="_blank" title = "bristol museum and art gallery facebook" rel="noopener noreferrer" class="fab fa-facebook-f"></a>
+            <a href="https://twitter.com/bristolmuseum" target="_blank" title = "bristol museum and art gallery twitter" rel="noopener noreferrer" class="fab fa-twitter "></a>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

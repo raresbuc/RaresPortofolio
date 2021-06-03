@@ -1,0 +1,180 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bristol Museum Guide</title>
+    <link th:href="@{/styles.css}" rel="stylesheet" />
+    <link th:href="@{/navbar.css}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css">
+    <script src="../static/slideshow.js" th:src="@{/slideshow.js}" defer></script>
+    <script src="../static/sticky-header.js" th:src="@{/sticky-header.js}" defer></script>
+
+
+</head>
+
+<body>
+
+<div class="header">
+
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+            <img src="../static/images/slideshow1.jpg"  alt="Bristol Museum and Art Gallery interior" height="500px" width="100%" th:src="@{/images/slideshow1.jpg}"/>
+            <div class="text">Bristol Museum & Art Gallery</div>
+            <div style="text-align:center">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+
+        <div class="mySlides fade">
+            <img src="../static/images/slideshow2.jpeg" alt = "European Old Masters Gallery" height="500px" width="100%" th:src="@{/images/slideshow2.jpeg}"/>
+            <div class="text">European Old Masters Gallery</div>
+            <div style="text-align:center">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+
+        <div class="mySlides fade">
+            <img src="../static/images/slideshow3.jpg" alt = "MShed interior" height="500px" width="100%" th:src="@{/images/slideshow3.jpg}"/>
+            <div class="text">MShed</div>
+            <div style="text-align:center">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div id="navbar">
+    <a class="title" href = "/"><h1>Bristol Museum Guide</h1></a>
+    <div class="logos">
+        <img src="../static/images/M_Shed_logo.jpg" alt = "MShed logo" height="50" width="50" th:src="@{images/M_Shed_logo.jpg}"/>
+        <img src="../static/images/bristolMuseum_logo.png" alt = "Bristol Museums and Art Gallery logo" height="50" width="50" th:src="@{images/bristolMuseum_logo.png}"/>
+    </div>
+
+    <div class = "topnav">
+        <a href="/" class = "current_tab"><i class="fa fa-fw fa-home"></i> Home</a>
+        <a href="BristolArtGallery"><i class = "fas fa-landmark"></i> Bristol Art Gallery</a>
+        <a href="MShed"><i class = "fas fa-landmark"></i>  M Shed</a>
+        <a href="favourites"><i class = "fas fa-heart"></i> Favourites</a>
+        <a href="popular" ><i class = "fas fa-star"></i> Popular</a>
+
+    </div>
+
+
+</div>
+
+
+<div class="content">
+    <p>Free entry! Visit one of our locations today to explore our collections of art, film, photos, nature, personal accounts and history on display.</p>
+
+
+    <div class = "row">
+        <div class = "column">
+            <a href=MShed>
+            <div class="website-image">
+                    <img src="../static/images/tourlinkMShed.jpeg" alt = "MShed Lodekka bus" width="100%" height = "350px"  class="image-fade" th:src="@{images/tourlinkMShed.jpeg}"/>
+                    <div class="text-on-image">Browse our collections at MShed</div>
+            </div>
+            </a>
+
+        </div>
+        <div class = "column">
+            <a href="BristolArtGallery">
+                <div class="website-image">
+                    <img src="../static/images/tourlinkBristolMuseum.jpg" alt = "Painting of Noah's Ark by Jan the Elder" width="100%" height = "350px"  class="image-fade" th:src="@{images/tourlinkBristolMuseum.jpg}"/>
+                    <div class="text-on-image">Browse our collections at Bristol Museum & Art<br> Gallery</div>
+                </div>
+            </a>
+
+        </div>
+    </div>
+
+    <div class ="row2">
+        <div class="center">
+            <div class="white-text"><b>Take a virtual tour of Bristol Museum & Art Gallery!</b></div>
+            <iframe width="100%" height="500px"
+                    src="https://ths.li/CMWBLs"
+                    name = "virtual tour of Bristol Museum and Art Gallery"
+                    style="border:none;"
+                    allowfullscreen="allowfullscreen">
+            </iframe>
+        </div>
+
+    </div>
+
+
+    <div class = "row">
+        <div class = "column">
+            <a href="https://www.bristolmuseums.org.uk/m-shed/" target="_blank" rel="noopener noreferrer">
+                <div class="website-image">
+                    <img src="../static/images/MShed.jpg" alt = "MShed wharf" width="100%" height = "350px"  class="image-fade" th:src="@{images/MShed.jpg}"/>
+                    <div class="text-on-image">MShed Website</div>
+                </div>
+            </a>
+
+        </div>
+        <div class = "column">
+            <a href="https://www.bristolmuseums.org.uk/bristol-museum-and-art-gallery/" target="_blank" rel="noopener noreferrer">
+                <div class="website-image">
+                    <img src="../static/images/BristolMuseum.jpg" alt = "Egyptian Shabtis" width="100%" height = "350px"  class="image-fade" th:src="@{images/BristolMuseum.jpg}"/>
+                    <div class="text-on-image">Bristol Museum & Art Gallery Website</div>
+                </div>
+            </a>
+
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="footer">
+    <a href="more" target="_blank" title = "cookie policy" rel="noopener noreferrer"> <button1 class="btn1 default">Our Cookie Policy</button1> </a>
+    <h3>Connect with us </h3>
+    <div class="footer-row">
+        <div class = "footer-column">
+            <p>Bristol Museums<p>
+        </div>
+        <div class = "footer-column">
+            <p>MShed</p>
+        </div>
+        <div class = "footer-column">
+            <p>Bristol Museum & Art Gallery<p>
+
+        </div>
+
+    </div>
+
+    <div class="footer-row">
+
+        <div class = "footer-column">
+            <a href="https://www.instagram.com/bristolmuseums/?hl=en" target="_blank" title = "bristol museums instagram" rel="noopener noreferrer" class="fab fa-instagram"></a>
+            <a href="https://www.youtube.com/c/BristolmuseumsOrgUk" target="_blank" title = "bristol museums Youtube" rel="noopener noreferrer" class="fab fa-youtube"></a>
+        </div>
+        <div class = "footer-column">
+
+            <a href="https://www.facebook.com/mshedbristol/" target="_blank" title = "MShed facebook" rel="noopener noreferrer" class="fab fa-facebook-f"></a>
+            <a href="https://twitter.com/mshedbristol" target="_blank" title = "MShed twitter" rel="noopener noreferrer" class="fab fa-twitter"></a>
+        </div>
+        <div class = "footer-column">
+            <a href="https://www.facebook.com/BristolMuseumandArtGallery/" target="_blank" title = "bristol museum and art gallery facebook" rel="noopener noreferrer" class="fab fa-facebook-f"></a>
+            <a href="https://twitter.com/bristolmuseum" target="_blank" title = "bristol museum and art gallery twitter" rel="noopener noreferrer" class="fab fa-twitter "></a>
+        </div>
+    </div>
+
+</div>
+
+
+</body>
+</html>

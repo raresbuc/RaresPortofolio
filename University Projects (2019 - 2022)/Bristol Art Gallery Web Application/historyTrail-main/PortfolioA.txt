@@ -1,0 +1,26 @@
+1. Overview
+
+- copy and paste subject proposal
+- client discussion
+
+2. Requirements
+
+- identify stakeholders
+- provide a user story for each stakeholder (QR code/gallery)
+
+3. Personal Data, Privacy, Security and Ethics Management
+
+- not collecting any data
+- cookie law (describe any ethics concerns)
+
+4. Architecture
+
+- idenitfy the requirments of the client (web app interface)
+
+5. Development Testing
+
+- Code then test it (unit tests) 
+
+6. Release Testing
+
+- Ctrl+Alt+Shift+U

@@ -1,0 +1,451 @@
+body {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
+    font-family: Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+p {
+    color: black;
+    text-align: center;
+    font-size: 20px;
+    padding: 0 10px;
+}
+
+h1{
+    text-align: center;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+h2{
+    text-align: center;
+    font-size: 40px;
+}
+
+
+
+/*-----------header start (slideshow)------*/
+
+* {box-sizing: border-box;}
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+
+}
+
+/* Caption text */
+.text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 16px;
+    width: 100%;
+    text-align: center;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active {
+    background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+
+/*----------header/ slideshow end--------*/
+
+
+
+/*------image links to website----------*/
+.row {
+    padding: 30px 4px;
+}
+
+.column {
+    float: left;
+    width: 50%;
+    flex: 40%;
+    padding: 10px 10%;
+    text-align: center;
+    display: inline;
+    position: relative;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.row2 {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 30px 4px;
+    background-color: black;
+}
+
+.image-fade {
+    opacity: 1;
+    display: block;
+    float:left;
+    transition: .5s ease;
+
+}
+.column a:hover .image-fade{
+    opacity:0.7;
+}
+.column a:hover .gallery-description{
+    opacity:0.7;
+}
+.column a:hover .text-on-image{
+    opacity:1;
+}
+.text-on-image{
+    position: absolute;
+    width: 30%;
+    bottom: 10px;
+    right: 20%;
+    background-color: black;
+    color: white;
+    padding: 20px;
+    opacity: 0.5;
+
+}
+
+.column a:hover .gallery-label{
+    opacity:1;
+}
+
+.gallery-label{
+    position: absolute;
+    width: 30%;
+    bottom: 10px;
+    right: 20%;
+    background-color: black;
+    color: white;
+    padding: 20px;
+    opacity: 0.5;
+
+}
+
+.gallery-label p{
+    font-family: "Georgia", "Times New Roman", serif;
+}
+.gallery-description{
+    width: 50%;
+    background-color: #bbbbbb;
+    float: left;
+    height: 350px;
+    text-align: center;
+}
+
+
+.gallery-description p{
+    padding: 0 15px;
+    font-size: 16px;
+    text-align: left;
+}
+
+
+.center{
+    display: block;
+    margin-left: 25%;
+    width: 50%;
+}
+
+
+.white-text{
+    padding-bottom: 5%;
+    color: white;
+    text-align: center;
+    font-size: 30px;
+}
+
+
+
+
+.more-padding{
+    padding: 0 5%;
+}
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+    background-color:white;
+    color: black;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    outline: none;
+    font-size: 18px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+    background-color: #ccc;
+}
+
+.contentc{
+    padding: 20px 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+    font-size: 18px;
+    transition: max-height 0.2s ease-out;
+}
+
+
+.collapsible:after {
+    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    font-size: 8px;
+    color: white;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.acolumn {
+    float: left;
+    width:50%;
+    padding: 5px;
+}
+
+
+
+
+
+/*------Responsiveness-------------------*/
+
+@media screen and (max-width: 1200px) {
+    .gallery-description p{
+        font-size: 14px;
+    }
+    .image-fade{
+        height: 300px;
+    }
+    .gallery-description{
+        height: 300px;
+    }
+    .gallery-label{
+        padding: 13px 5px;
+    }
+
+}
+
+
+@media screen and (max-width: 1100px) {
+    .content p{
+        font-size: 16px;
+    }
+    .text-on-image{
+        width: 30%;
+        padding: 10px 5px;
+        font-size: 15px;
+
+    }
+}
+@media screen and (max-width: 1050px) {
+    .gallery-description p {
+        font-size: 13px;
+    }
+
+    .image-fade {
+        height: 250px;
+    }
+
+    .gallery-description {
+        height: 250px;
+    }
+}
+
+
+@media screen and (max-width: 900px) {
+    .gallery-description p{
+        font-size: 12px;
+    }
+    .image-fade{
+        height: 230px;
+    }
+    .gallery-description{
+        height: 230px;
+    }
+    .gallery-label{
+        padding: 10px 5px;
+    }
+    .text-on-image{
+        width: 40%;
+        padding: 5px;
+        font-size: 14px;
+
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .column{
+        padding: 10px 5%;
+    }
+    .text-on-image{
+        right: 10%;
+    }
+
+    .gallery-label{
+        right: 10%;
+        width: 40%;
+        padding: 8px;
+
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    /*header*/
+    h1{
+        font-size: 20px;
+    }
+    h2{font-size: 20px;}
+    .text {font-size: 11px}
+    /*slideshow*/
+    .mySlides img{
+        height: 250px;
+    }
+    /*image links*/
+    .row{
+        padding: 0;
+    }
+    .column {
+        width: 100%;
+        padding: 10px 10%;
+
+    }
+
+    .text-on-image{
+        padding: 10px;
+    }
+    .gallery-label{
+        right: 10%;
+        font-size: 16px;
+        padding: 15px;
+    }
+    .gallery-description p{
+        font-size: 16px;
+
+    }
+    .center{
+        width:90%;
+        margin: 5%;
+    }
+    .white-text{
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .gallery-description p{
+        font-size: 14px;
+
+    }
+    .gallery-label{
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .image-fade{
+        height: 200px;
+    }
+    .gallery-description{
+        height: 200px;
+    }
+    .gallery-description p{
+        font-size: 12px;
+
+    }
+    .gallery-label{
+        font-size: 12px;
+        padding: 10px;
+    }
+}
+
+.btn1 {
+  border: none;
+  background-color: darkgrey;
+  padding: 10px 20px;
+  font-size: 12px;
+  cursor: pointer;
+  text-align: right;
+  float: right;
+}
+
+/* On mouse-over */
+.btn1:hover {background: grey;}
+.default {color: black;}
+
+.button1 {
+    background-color: lightblue;
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: right;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 32px;
+    border-radius: 8px; /* makes button rounded */
+    margin: 20%;
+    cursor: pointer;
+    transition: all 0.5s;
+
+}
+@media screen and (max-width: 600px) {
+.btn1 {
+  border: none;
+  background-color: darkgrey;
+  padding: 5px 10px;
+  font-size: 6px;
+  cursor: pointer;
+  text-align: right;
+  float: right;
+}
+
+}

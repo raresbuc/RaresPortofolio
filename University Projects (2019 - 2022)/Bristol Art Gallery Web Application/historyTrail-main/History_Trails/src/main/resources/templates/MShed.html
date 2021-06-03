@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bristol Museum Guide</title>
+    <link th:href="@{/styles.css}" rel="stylesheet" />
+    <link th:href="@{/navbar.css}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css">
+    <script src="../static/sticky-header.js" th:src="@{/sticky-header.js}" defer></script>
+
+</head>
+
+<body>
+
+
+<div id="navbar">
+    <a class="title" href = "/"><h1>Bristol Museum Guide</h1></a>
+    <div class="logos">
+        <img src="../static/images/M_Shed_logo.jpg" alt = "MShed logo" height="50" width="50" th:src="@{images/M_Shed_logo.jpg}"/>
+        <img src="../static/images/bristolMuseum_logo.png" alt = "Bristol Museums and Art Gallery logo" height="50" width="50" th:src="@{images/bristolMuseum_logo.png}"/>
+    </div>
+
+    <div class = "topnav">
+        <a href="/"><i class="fa fa-fw fa-home"></i> Home</a>
+        <a href="BristolArtGallery"><i class = "fas fa-landmark"></i> Bristol Art Gallery</a>
+        <a href="MShed" class = "current_tab"><i class = "fas fa-landmark"></i>  M Shed</a>
+        <a href="favourites"><i class = "fas fa-heart"></i> Favourites</a>
+        <a href="popular"><i class = "fas fa-star"></i> Popular</a>
+
+    </div>
+
+</div>
+
+
+<div class="content">
+    <h1>  M Shed </h1>
+    <p>M Shed is a museum all about Bristol. It tells the story of the city and its unique place in the world. Explore the city through time: its places, its people and their stories by viewing the colourful exhibits detailing history of the city and its people. See amazing film and photographs, listen to moving personal stories, encounter rare and quirky objects and add your own memories of Bristol through the interactive displays. </p>
+
+    <div class = "row">
+        <div class = "column">
+            <a href='https://www.bristolmuseums.org.uk/m-shed/whats-at/bristol-places' target="_blank" rel="noopener noreferrer">
+                <img class="image-fade" src="../static/images/Bristol_Places.jpg" alt="Image of people in Bristol"  width="50%" height = "350px" th:src="@{images/Bristol_Places.jpg}"/>
+                <div class = "gallery-description">
+                    <p>The Bristol Places gallery focuses on the physical and dynamic city– the ways people have shaped it and continue to do so.</p>
+                </div>
+                <div class="gallery-label">Bristol Places </div>
+            </a>
+        </div>
+        <div class = "column">
+            <a href='https://www.bristolmuseums.org.uk/m-shed/whats-at/bristol-people/' target="_blank" rel="noopener noreferrer">
+                <img  class="image-fade" src="../static/images/Bristol_People.jpg" alt="People in Bristol" width="50%" height = "350px" th:src="@{images/Bristol_People.jpg}"/>
+                <div class = "gallery-description">
+                    <p><b>Bristol People</b><br> The Bristol People gallery explores activities past and present that make Bristol what it is – creating, trading, challenging and celebrating. </p>
+                </div>
+                <div class="gallery-label">Bristol People </div>
+            </a>
+        </div>
+    </div>
+
+    <div class = "row">
+        <div class = "column">
+            <a href= 'https://www.bristolmuseums.org.uk/m-shed/whats-at/bristol-life/' target="_blank" rel="noopener noreferrer">
+                <img class="image-fade" src="../static/images/Bristol-Life.jpg" alt="Image of a table in Bristol"  width="50%" height = "350px" th:src="@{images/Bristol-Life.jpg}"/>
+                <div class = "gallery-description">
+                    <p>The Bristol Life gallery explores people’s shared experiences in the city, from the momentous to the everyday – see, hear and share stories.</p>
+                </div>
+                <div class="gallery-label">Bristol Life </div>
+            </a>
+        </div>
+        <div class = "column">
+            <a href='https://www.bristolmuseums.org.uk/m-shed/whats-at/working-exhibits/' target="_blank" rel="noopener noreferrer">
+                <img  class="image-fade" src="../static/images/Cranes.jpg" alt="Cranes in Bristol" width="50%" height = "350px" th:src="@{images/Cranes.jpg}"/>
+                <div class = "gallery-description">
+                        <p>Read about some of our biggest exhibits which are outside M Shed and can be seen even when the museum is closed. </p>
+                </div>
+                <div class="gallery-label">The Working Exhibits </div>
+            </a>
+        </div>
+    </div>
+
+
+    <div class = "row">
+        <div class = "column">
+            <a href= 'https://www.bristolmuseums.org.uk/m-shed/whats-at/store/' target="_blank" rel="noopener noreferrer">
+                <img class="image-fade" src="../static/images/L_Shed.jpg" alt="Collection of industrial and maritime items in Bristol"  width="50%" height = "350px" th:src="@{images/L_Shed.jpg}"/>
+                <div class = "gallery-description">
+                    <p> L Shed, adjoining M Shed, contains thousands of items from the industrial, maritime and social history collections.</p>
+                </div>
+                <div class="gallery-label">Treasures in Store </div>
+            </a>
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="footer">
+    <a href="more" target="_blank" title = "cookie policy" rel="noopener noreferrer"> <button1 class="btn1 default">Our Cookie Policy</button1> </a>
+    <h3>Connect with us</h3>
+
+    <div class="footer-row">
+        <div class = "footer-column">
+            <p>Bristol Museums<p>
+        </div>
+        <div class = "footer-column">
+            <p>MShed</p>
+        </div>
+        <div class = "footer-column">
+            <p>Bristol Museum & Art Gallery<p>
+
+        </div>
+    </div>
+
+    <div class="footer-row">
+        <div class = "footer-column">
+            <a href="https://www.instagram.com/bristolmuseums/?hl=en" target="_blank" title = "bristol museums instagram" rel="noopener noreferrer" class="fab fa-instagram"></a>
+            <a href="https://www.youtube.com/c/BristolmuseumsOrgUk" target="_blank" title = "bristol museums Youtube" rel="noopener noreferrer" class="fab fa-youtube"></a>
+        </div>
+        <div class = "footer-column">
+
+            <a href="https://www.facebook.com/mshedbristol/" target="_blank" title = "MShed facebook" rel="noopener noreferrer" class="fab fa-facebook-f"></a>
+            <a href="https://twitter.com/mshedbristol" target="_blank" title = "MShed twitter" rel="noopener noreferrer" class="fab fa-twitter"></a>
+        </div>
+        <div class = "footer-column">
+            <a href="https://www.facebook.com/BristolMuseumandArtGallery/" target="_blank" title = "bristol museum and art gallery facebook" rel="noopener noreferrer" class="fab fa-facebook-f"></a>
+            <a href="https://twitter.com/bristolmuseum" target="_blank" title = "bristol museum and art gallery twitter" rel="noopener noreferrer" class="fab fa-twitter "></a>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

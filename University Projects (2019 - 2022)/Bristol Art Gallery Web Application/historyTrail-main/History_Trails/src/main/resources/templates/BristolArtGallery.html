@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bristol Museum Guide</title>
+    <link th:href="@{/styles.css}" rel="stylesheet" />
+    <link th:href="@{/navbar.css}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css">
+    <script src="../static/sticky-header.js" th:src="@{/sticky-header.js}" defer></script>
+
+</head>
+
+<body>
+
+
+<div id="navbar">
+    <a class="title" href = "/"><h1>Bristol Museum Guide</h1></a>
+    <div class="logos">
+        <img src="../static/images/M_Shed_logo.jpg" alt = "MShed logo" height="50" width="50" th:src="@{images/M_Shed_logo.jpg}"/>
+        <img src="../static/images/bristolMuseum_logo.png" alt = "Bristol Museums and Art Gallery logo" height="50" width="50" th:src="@{images/bristolMuseum_logo.png}"/>
+    </div>
+
+    <div class = "topnav">
+        <a href="/"><i class="fa fa-fw fa-home"></i> Home</a>
+        <a href="BristolArtGallery" class = "current_tab"><i class = "fas fa-landmark"></i> Bristol Art Gallery</a>
+        <a href="MShed"><i class = "fas fa-landmark"></i>  M Shed</a>
+        <a href="favourites"><i class = "fas fa-heart"></i> Favourites</a>
+        <a href="popular"><i class = "fas fa-star"></i> Popular</a>
+    </div>
+
+</div>
+
+
+<div class="content">
+    <h1>Bristol Museum and Art Gallery</h1>
+    <p>Opened in 1905, Bristol Museum & Art Gallery houses the city’s world class collections, from dinosaurs and diamonds to magnificent fine art and Egyptian mummies. Twenty galleries and a changing programme of blockbuster exhibitions tell the story of the world from the beginning of time to the present day. Take a look at some of the featured galleries below!</p>
+
+    <div class = "row">
+        <div class = "column">
+            <a href='Gallery2'>
+                <img class="image-fade" src="../static/images/Sunset.jpe" alt="Sunset, oil painting"  width="50%" height = "350px" th:src="@{images/Sunset.jpe}"/>
+                <div class = "gallery-description">
+                    <p>Paintings by French artists, including work by Lucien Pissarro</p>
+                </div>
+                <div class="gallery-label">French Art</div>
+            </a>
+        </div>
+
+        <div class = "column">
+            <a href='Gallery3'>
+                <img  class="image-fade" src="../static/images/Flower.jpg" alt="Flower Piece, oil on canvas painting" width="50%" height = "350px" th:src="@{images/Flower.jpg}"/>
+                <div class = "gallery-description">
+                    <p>This gallery covers a significant period in the history of Western art, from the early Renaissance to the Baroque, often described as ‘Old Masters’</p>
+                </div>
+                <div class="gallery-label">European Old Masters</div>
+            </a>
+        </div>
+
+    </div>
+
+    <div class = "row">
+
+        <div class = "column">
+            <a href='Gallery4'>
+                <img  class="image-fade" src="../static/images/The Cutting-Out.jpe" alt="The Cutting-Out of the French Corvette La Chevrette 21st July 1801 oil on Canvas." width="50%" height = "350px" th:src="@{images/The Cutting-Out.jpe}"/>
+                <div class = "gallery-description">
+                    <p>During the 18th and early 19th centuries, art was influenced heavily by fundamental changes in philosophy, culture and politics
+                    </p>
+                </div>
+                <div class="gallery-label">The Enlightenment Gallery</div>
+            </a>
+        </div>
+
+
+        <div class = "column">
+            <a href='Gallery5'>
+                <img  class="image-fade" src="../static/images/RobynDenny.jpg" alt="Robyn Denny and Katherine Reid Oil on wood 1975 " width="50%" height = "350px" th:src="@{images/RobynDenny.jpg}"/>
+                <div class = "gallery-description">
+                    <p>It is easy to overlook space in art. Artists in the 20th and 21st centuries have treated space in diverse ways, seeking their own visual languages.
+                    </p>
+                </div>
+                <div class="gallery-label">Space is a Place</div>
+            </a>
+        </div>
+
+    </div>
+</div>
+
+<div class="footer">
+    <a href="more" target="_blank" title = "cookie policy" rel="noopener noreferrer"> <button1 class="btn1 default">Our Cookie Policy</button1> </a>
+    <h3>Connect with us</h3>
+
+    <div class="footer-row">
+        <div class = "footer-column">
+            <p>Bristol Museums<p>
+        </div>
+        <div class = "footer-column">
+            <p>MShed</p>
+        </div>
+        <div class = "footer-column">
+            <p>Bristol Museum & Art Gallery<p>
+
+        </div>
+    </div>
+
+    <div class="footer-row">
+
+        <div class = "footer-column">
+            <a href="https://www.instagram.com/bristolmuseums/?hl=en" target="_blank" title = "bristol museums instagram" rel="noopener noreferrer" class="fab fa-instagram"></a>
+            <a href="https://www.youtube.com/c/BristolmuseumsOrgUk" target="_blank" title = "bristol museums Youtube" rel="noopener noreferrer" class="fab fa-youtube"></a>
+        </div>
+        <div class = "footer-column">
+
+            <a href="https://www.facebook.com/mshedbristol/" target="_blank" title = "MShed facebook" rel="noopener noreferrer" class="fab fa-facebook-f"></a>
+            <a href="https://twitter.com/mshedbristol" target="_blank" title = "MShed twitter" rel="noopener noreferrer" class="fab fa-twitter"></a>
+        </div>
+        <div class = "footer-column">
+            <a href="https://www.facebook.com/BristolMuseumandArtGallery/" target="_blank" title = "bristol museum and art gallery facebook" rel="noopener noreferrer" class="fab fa-facebook-f"></a>
+            <a href="https://twitter.com/bristolmuseum" target="_blank" title = "bristol museum and art gallery twitter" rel="noopener noreferrer" class="fab fa-twitter "></a>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+</html>
