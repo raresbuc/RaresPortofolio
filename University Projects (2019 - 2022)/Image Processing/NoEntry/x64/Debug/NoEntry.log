@@ -1,0 +1,17 @@
+﻿  noentry_hough.cpp
+D:\University\3rd Year\IP\IPCV\NoEntry\hough.h(27,15): warning C4101: 'k': unreferenced local variable
+D:\University\3rd Year\IP\IPCV\NoEntry\hough.h(41,12): warning C4101: 'j': unreferenced local variable
+D:\University\3rd Year\IP\IPCV\NoEntry\hough.h(125,52): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+D:\University\3rd Year\IP\IPCV\NoEntry\hough.h(126,52): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+D:\University\3rd Year\IP\IPCV\NoEntry\noentry_hough.cpp(92,14): warning C4244: 'initializing': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+D:\University\3rd Year\IP\IPCV\NoEntry\noentry_hough.cpp(93,15): warning C4244: 'initializing': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+D:\University\3rd Year\IP\IPCV\NoEntry\noentry_hough.cpp(112,17): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  NoEntry.vcxproj -> D:\University\3rd Year\IP\IPCV\NoEntry\x64\Debug\NoEntry.exe

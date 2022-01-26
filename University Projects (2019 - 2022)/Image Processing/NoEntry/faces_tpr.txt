@@ -1,0 +1,95 @@
+image           : 0
+TPR             : 0
+false positives : 12
+false negatives : 0
+F1-SCORE:       : 0
+
+image           : 1
+TPR             : 1
+false positives : 8
+false negatives : 0
+F1-SCORE:       : 0.2
+
+image           : 2
+TPR             : 1
+false positives : 12
+false negatives : 0
+F1-SCORE:       : 0.25
+
+image           : 3
+TPR             : 0
+false positives : 0
+false negatives : 0
+F1-SCORE:       : 0
+
+image           : 4
+TPR             : 1
+false positives : 26
+false negatives : 0
+F1-SCORE:       : 1
+
+image           : 5
+TPR             : 1
+false positives : 4
+false negatives : 0
+F1-SCORE:       : 0.333333
+
+image           : 6
+TPR             : 0
+false positives : 6
+false negatives : 0
+F1-SCORE:       : 0
+
+image           : 7
+TPR             : 0.5
+false positives : 6
+false negatives : 1
+F1-SCORE:       : 0.222222
+
+image           : 8
+TPR             : 0
+false positives : 1
+false negatives : 0
+F1-SCORE:       : 0
+
+image           : 9
+TPR             : 0
+false positives : 2
+false negatives : 0
+F1-SCORE:       : 0
+
+image           : 10
+TPR             : 0
+false positives : 6
+false negatives : 0
+F1-SCORE:       : 0
+
+image           : 11
+TPR             : 1
+false positives : 7
+false negatives : 0
+F1-SCORE:       : 0.363636
+
+image           : 12
+TPR             : 0
+false positives : 19
+false negatives : 1
+F1-SCORE:       : 0
+
+image           : 13
+TPR             : 0
+false positives : 1
+false negatives : 0
+F1-SCORE:       : 0
+
+image           : 14
+TPR             : 0
+false positives : 4
+false negatives : 0
+F1-SCORE:       : 0
+
+image           : 15
+TPR             : 0
+false positives : 1
+false negatives : 0
+F1-SCORE:       : 0
